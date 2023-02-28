@@ -1,0 +1,4 @@
+com/du/bookServer/bookRPCAPI/book/service/BookDubboService.class
+com/du/bookServer/bookRPCAPI/book/result/RpcResult.class
+com/du/bookServer/bookRPCAPI/book/domain/BookDomain.class
+com/du/bookServer/bookRPCAPI/book/result/ResultCodeEnum.class

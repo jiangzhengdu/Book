@@ -1,0 +1,14 @@
+server:
+  port: 7007
+spring:
+  application:
+    name: bookCentral
+# dubbo 相关配置
+dubbo:
+  application:
+    name: bookCentral
+    qos-enable: false
+    qos-port: 33333
+    qos-accept-foreign-ip: false
+  registry:
+    address: zookeeper://127.0.0.1:2181
