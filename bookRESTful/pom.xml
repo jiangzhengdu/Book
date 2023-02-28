@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <groupId>com.du.book</groupId>
-    <artifactId>RESTful</artifactId>
+    <artifactId>bookRESTful</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>RESTful</name>
     <description>RESTful</description>
