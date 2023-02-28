@@ -33,6 +33,7 @@
         <module>bookRPCProvider</module>
         <module>bookRPCAPI</module>
         <module>bookCentral</module>
+        <module>RESTful</module>
     </modules>
 
     <!--声明全局依赖（子项目需要显示的引用才会继承依赖）-->
