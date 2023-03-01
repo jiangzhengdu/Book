@@ -1,6 +1,6 @@
 package com.du.bookServer.RESTful.Result;
 
-public class ResponseData extends Response {
+public class ResponseData extends RESTfulResponse {
     private Object data;
 
     public ResponseData() {}

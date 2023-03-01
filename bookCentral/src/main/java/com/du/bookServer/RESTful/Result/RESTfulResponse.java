@@ -1,25 +1,25 @@
 package com.du.bookServer.RESTful.Result;
 
-public class Response {
+public class RESTfulResponse {
     /** 返回信息码*/
     private String rspCode="000000";
     /** 返回信息内容*/
     private String rspMsg="操作成功";
 
-    public Response() {
+    public RESTfulResponse() {
     }
 
-    public Response(ExceptionMsg msg){
+    public RESTfulResponse(ExceptionMsg msg){
         this.rspCode=msg.getCode();
         this.rspMsg=msg.getMsg();
     }
 
-    public Response(String rspCode) {
+    public RESTfulResponse(String rspCode) {
         this.rspCode = rspCode;
         this.rspMsg = "";
     }
 
-    public Response(String rspCode, String rspMsg) {
+    public RESTfulResponse(String rspCode, String rspMsg) {
         this.rspCode = rspCode;
         this.rspMsg = rspMsg;
     }
@@ -38,7 +38,7 @@ public class Response {
 
     @Override
     public String toString() {
-        return "Response{" +
+        return "RESTfulResponse{" +
                 "rspCode='" + rspCode + '\'' +
                 ", rspMsg='" + rspMsg + '\'' +
                 '}';

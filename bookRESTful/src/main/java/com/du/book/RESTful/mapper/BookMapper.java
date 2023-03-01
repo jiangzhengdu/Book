@@ -14,6 +14,9 @@ public interface BookMapper {
     @Select("select * from bookRESTful where name like concat('%',#{name},'%')")
     List<Book> queryByName(@Param("name") String name);
 
+    @Select("select * from bookRESTful where author like concat('%',#{author},'%')")
+    List<Book> queryByAuthor(@Param("author") String author);
+
     @Select("select * from bookRESTful")
     List<Book> queryAll();
 

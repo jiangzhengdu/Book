@@ -10,14 +10,14 @@
         <module name="bookRPCProvider" />
         <module name="bookCentral" />
         <module name="bookRPCAPI" />
-        <module name="RESTful" />
+        <module name="bookRESTful" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="RESTful" options="-parameters" />
       <module name="bookCentral" options="-parameters" />
+      <module name="bookRESTful" options="-parameters" />
       <module name="bookRPCAPI" options="-parameters" />
       <module name="bookRPCProvider" options="-parameters" />
       <module name="bookServer" options="-parameters" />

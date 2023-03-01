@@ -54,6 +54,16 @@ public class BookController {
             return new ResponseData(ExceptionMsg.FAILED, books);
         }
     }
+    @RequestMapping(value = "/author/{author}", method = RequestMethod.GET)
+    public ResponseData findBookByAuthor(@PathVariable("author") String author) throws IOException {
+        List<Book> books = bookMapper.queryByAuthor(author);
+        if (books != null) {
+            return new ResponseData(ExceptionMsg.SUCCESS, books);
+        }
+        else {
+            return new ResponseData(ExceptionMsg.FAILED, books);
+        }
+    }
 
     /**
      * add book
@@ -78,4 +88,6 @@ public class BookController {
         bookMapper.updateById(book);
         return new ResponseData(ExceptionMsg.SUCCESS, book);
     }
+
+
 }
