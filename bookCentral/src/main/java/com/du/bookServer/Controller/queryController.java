@@ -20,7 +20,7 @@ public class queryController {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    @GetMapping("/")
+    @GetMapping("")
     public RESTfulResponse getBookList() {
         ResponseEntity<ResponseData> responseEntity = restTemplate.getForEntity("http://localhost:8081/RESTfulbook/", ResponseData.class);
         System.out.println(responseEntity);
