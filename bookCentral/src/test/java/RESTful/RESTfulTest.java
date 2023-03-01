@@ -26,7 +26,7 @@ public class RESTfulTest {
     @Test
     public void withparameters1() {
 //        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:8081/RESTfulbook/{1}", String.class, 10);
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://localhost:8081/RESTfulbook/name/{1}", String.class, 10);
         System.out.println(responseEntity.getBody());
     }
 
@@ -52,7 +52,7 @@ public class RESTfulTest {
     public void postForEntity() {
         LinkedMultiValueMap<String, Object> paramMap = new LinkedMultiValueMap<>();
 //        paramMap.add("id", 9);
-        paramMap.add("name", "test restful book name 1");
+        paramMap.add("name", "queryController restful book name 1");
         paramMap.add("price", 1.11);
         paramMap.add("inventory", 2);
         ResponseEntity<ResponseData> responseEntity = restTemplate.postForEntity("http://localhost:8081/RESTfulbook/", paramMap, ResponseData.class);
@@ -63,7 +63,7 @@ public class RESTfulTest {
     public void put() {
         Book book = new Book();
         book.setId(6);
-        book.setName("test name");
+        book.setName("queryController name");
         book.setPrice(9.9);
         book.setInventory(1);
         restTemplate.put("http://localhost:8081/RESTfulbook/{1}", book, Book.class,book.getId());

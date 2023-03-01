@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = bookServerApplication.class)
-public class test {
+public class queryController {
 
     @Reference
     BookDubboService bookDubboService;
