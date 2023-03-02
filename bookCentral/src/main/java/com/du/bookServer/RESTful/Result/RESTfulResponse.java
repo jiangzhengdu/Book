@@ -1,6 +1,8 @@
 package com.du.bookServer.RESTful.Result;
 
-public class RESTfulResponse {
+import java.io.Serializable;
+
+public class RESTfulResponse implements Serializable {
     /** 返回信息码*/
     private String rspCode="000000";
     /** 返回信息内容*/
