@@ -7,16 +7,16 @@ import java.util.List;
 
 @Mapper
 public interface BookMapper {
-    @Select("select * from bookRPC where id = #{id}")
+    @Select("select * from bookRPC where id = #{id} and inventory > 0")
     BookDomain queryById(@Param("id") int id);
 
-    @Select("select * from bookRPC where name like concat('%',#{name},'%')")
+    @Select("select * from bookRPC where name like concat('%',#{name},'%') and inventory > 0")
     List<BookDomain> queryByName(@Param("name") String name);
 
-    @Select("select * from bookRPC where author like concat('%',#{author},'%')")
+    @Select("select * from bookRPC where author like concat('%',#{author},'%') and inventory > 0")
     List<BookDomain> queryByAuthor(@Param("author") String author);
 
-    @Select("select * from bookRPC")
+    @Select("select * from bookRPC where inventory > 0")
     List<BookDomain> queryAll();
 
     @Insert({"insert into bookRPC(name, price, inventory) values(#{name}, #{price}, #{inventory})"})
@@ -26,7 +26,8 @@ public interface BookMapper {
     @Delete("delete from bookRPC where id = #{id}")
     int deleteById(int id);
 
-    @Update("update bookRPC set name = #{name}, price = #{price}, inventory = #{inventory} where id = #{id}")
+
+    @Update("update bookRPC set name = #{name}, price = #{price}, inventory = #{inventory}, author = #{author}, source = #{source} where id = #{id}")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     int updateById(BookDomain book);
 

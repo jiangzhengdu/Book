@@ -11,6 +11,7 @@ public interface BookDubboService {
     RpcResult<List<BookDomain>> getBookList();
     RpcResult<List<BookDomain>> getBookByName(String name);
     RpcResult<List<BookDomain>> getBookByAuthor(String author);
+    RpcResult<String> updateBook(BookDomain book);
 
 
 

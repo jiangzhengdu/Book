@@ -37,5 +37,11 @@ public class bookDubboServiceImpl implements BookDubboService {
         return RpcResult.success(list);
     }
 
+    @Override
+    public RpcResult<String> updateBook(BookDomain book) {
+        bookMapper.updateById(book);
+        return RpcResult.success("done");
+    }
+
 
 }
