@@ -1,19 +1,13 @@
 package com.du.bookServer.Controller;
 
-import com.du.bookServer.Model.Book;
+import com.du.bookServer.domain.Book;
 import com.du.bookServer.RESTful.Result.RESTfulResponse;
-import com.du.bookServer.RESTful.Result.ResponseData;
 import com.du.bookServer.Service.BookService;
-import com.du.bookServer.bookRPCAPI.book.domain.BookDomain;
-import com.du.bookServer.bookRPCAPI.book.result.RpcResult;
 import com.du.bookServer.bookRPCAPI.book.service.BookDubboService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/book")

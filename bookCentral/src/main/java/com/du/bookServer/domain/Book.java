@@ -1,4 +1,4 @@
-package com.du.bookServer.Model;
+package com.du.bookServer.domain;
 
 import lombok.Data;
 

@@ -1,6 +1,6 @@
 package com.du.bookServer.Service;
 
-import com.du.bookServer.Model.Book;
+import com.du.bookServer.domain.Book;
 import com.du.bookServer.RESTful.Result.RESTfulResponse;
 import com.du.bookServer.RESTful.Result.ResponseData;
 import com.du.bookServer.bookRPCAPI.book.domain.BookDomain;
@@ -13,7 +13,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;

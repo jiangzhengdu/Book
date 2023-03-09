@@ -1,6 +1,6 @@
 package RESTful;
 
-import com.du.bookServer.Model.Book;
+import com.du.bookServer.domain.Book;
 import com.du.bookServer.RESTful.Result.ResponseData;
 import com.du.bookServer.bookServerApplication;
 import org.junit.jupiter.api.Test;
