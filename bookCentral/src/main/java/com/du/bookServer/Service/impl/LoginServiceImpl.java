@@ -5,6 +5,7 @@ import com.du.bookServer.Service.LoginService;
 import com.du.bookServer.domain.LoginUser;
 import com.du.bookServer.domain.ResponseResult;
 import com.du.bookServer.domain.User;
+import com.du.bookServer.mapper.UserMapper;
 import com.du.bookServer.utils.JwtUtil;
 import com.du.bookServer.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class LoginServiceImpl implements LoginService {
     RedisCache redisCache;
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private UserMapper userMapper;
     @Override
     public ResponseResult login(User user) {
         // use AuthenticationManager authenticate
@@ -66,5 +70,15 @@ public class LoginServiceImpl implements LoginService {
     //
     public ResponseResult save() {
         return null;
+    }
+
+    @Override
+    public ResponseResult getInfo() {
+        UsernamePasswordAuthenticationToken authentication = (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+        LoginUser loginUser = (LoginUser) authentication.getPrincipal();
+        Long id = loginUser.getUser().getId();
+        User user = userMapper.queryById(id.intValue());
+        user.setPassword("password not show!");
+        return new ResponseResult(200, "Get user Info success!", user);
     }
 }

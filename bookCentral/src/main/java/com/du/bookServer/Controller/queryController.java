@@ -68,9 +68,4 @@ public class queryController {
         return bookService.updateBook(book);
     }
 
-
-
-
-
-
 }

@@ -16,7 +16,8 @@ public class bookDubboServiceImpl implements BookDubboService {
     BookMapper bookMapper;
     @Override
     public RpcResult<BookDomain> getBookById(int id) {
-        return RpcResult.success(new BookDomain(10,"book name", "autohr",1.1, 2, 2));
+        BookDomain bookDomain = bookMapper.queryById(id);
+        return RpcResult.success(bookDomain);
     }
 
     @Override

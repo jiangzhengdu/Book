@@ -24,4 +24,11 @@ public class LoginController {
     public ResponseResult logout(){
         return loginService.logout();
     }
+
+    @RequestMapping("/user/info")
+    public ResponseResult getInfo(){
+        return loginService.getInfo();
+    }
+
+
 }

@@ -14,4 +14,8 @@ public interface UserMapper {
     @Insert({"insert into user(username, password, balance, role) values(#{username}, #{password}, #{balance}, #{role})"})
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void saveUser(User user);
+
+    @Update("update user set balance = #{balance} where id = #{id}")
+    void updateUser(User user);
+
 }
